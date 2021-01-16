@@ -1,15 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <keep-alive exclude="Detail">
+      <router-view></router-view>
+    </keep-alive>
+    <main-tab-bar/>
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    </div> -->
+ 
   </div>
 </template>
-
+<script>
+import MainTabBar from 'components/content/maintabbar/MainTabBar.vue'
+export default {
+  name:'App',
+  components:{
+    MainTabBar
+  }
+}
+</script>
 <style>
-#app {
+@import "assets/css/base.css";
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,5 +41,5 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>
